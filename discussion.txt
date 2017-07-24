@@ -1,0 +1,102 @@
+Recursion
+
+Question 1: In your own words, what is recursion?
+
+Answer: Recursion occurs when a function calls itself from within the
+        function. A recursive function will create a stack of function
+        calls that will be resolved in "last in first out" order.  When creating
+        a recursive function, one must build in a "base case" that will act as a
+        benchmark for when the function should stop calling itself.  For instance
+        a base case could be when there are one or fewer items left to operate
+        on.  Once the recursive function reaches its base case, it resolves each
+        function in the call stack to return the final result.
+
+Question 2: Why is it necessary to have a base case?
+
+Answer: Without a base case the recursive function will run until your
+        computer reaches its recursion depth limit or until you run out of 
+        memory.  The base case tells the recursive function when to stop
+        recursing and return a result.
+
+Graphs
+
+Question 1: What is a graph?
+
+Answer: Much like a tree, a graph tracks relationships between nodes.  A graph's
+        relationships can be directed (hierarchical structure like a
+        supervisor/employee relationship) or undirected (friendships are
+        generally undirected).  In graphs each node can have many children and
+        many parents, and also can contain loops/cycles.
+
+Question 2: How is a graph different from a tree?
+
+Answer: While each node in a tree can only have one parent, a node in a graph
+        can have many parents.  Additionally, graphs can contain loops/cycles
+        where a node can connect back up to another disconnected node without 
+        needing relationships to every other node in between.
+
+Question 3: Give an example of something that would be good to model with a graph.
+
+Answer: A graph would be helpful to provide a relational representation of a
+        family tree.
+
+
+Performance of Different Data Structures
+
+
+Fill in runtimes
+    # if linked list does not track tail popping and adding right would be O(n)
+    # popping from arbitrary point in list is O(n) for all data structures listed
+Data Structure          Index   Search  Add-R   Add-L   Pop-L   Pop-R
+Python List (Arr)       O(1)    O(n)    O(1)    O(n)    O(n)    O(1) 
+Linked List (has tail)  O(n)    O(n)    O(1)    O(1)    O(1)    O(1)
+Doubly-Linked List      O(n)    O(n)    O(1)    O(1)    O(1)    O(1)
+Queue (as Array)        X       X       O(1)    X       O(n)    X
+Queue (LL/DLL)          X       X       O(1)    X       O(1)    X
+Stack (Arr/LL/DLL)      X       X       O(1)    X       X       O(1)
+Deque (as DLL)          X       X       O(1)    O(1)    O(1)    O(1)
+
+
+Fill in runtimes and memory
+
+    # runtime of adding and deleting from a BST would depend on whether or
+    # not you need to rebalance the tree after adding/deleting
+    # if you add/delete without re-balancing the tree the runtime would be
+    # O(logn) for these operations.
+    # memory of a regular tree depends what kind of data structure you use to
+    # build the tree - if you use a deque it would take a lot of memory - 
+    # if you use a singly linked list it would take medium memory
+
+Data Structure          Get      Add      Delete   Iterate Memory
+Dictionary (Hash Map)   O(1)     O(1)     O(1)     O(n)    medium
+Set (Hash Map)          O(1)     O(1)     O(1)     O(n)    medium 
+Binary Search Tree      O(logn)  O(n)     O(n)     O(n)    a lot      
+Tree                    O(n)     O(n)     O(n)     O(n)    medium
+
+
+Sorting
+
+Question 1: Describe in words how the Bubble Sort algorithm works.
+
+Answer: A bubble sort compares each item in a list to each other item in the 
+        list to determine the order of the list.  The algorithm will move the 
+        item with highest value to the end of the list, then the second highest
+        item, then third highest, etc. until the list is in order.  Bubble sort
+        will stop sorting when the previous iteration did not have to swap any
+        items.
+
+Question 2: Describe in words how the Merge Sort algorithm works.
+
+Answer: Merge sort splits an array into smaller arrays recursively then compares
+        arrays containing one item each to each other.  After comparing and 
+        sorting arrays of one item the algorithm merges the items in order.
+
+Question 3: Describe in words how the Quick Sort algorithm works.
+
+Answer: Quicksort randomly chooses a pivot point in a list to compare other
+        items in an array.  It compares items in the array to the pivot item
+        to split them into lists of "higher", "lower", and "equal to"
+        then recursively calls itself to quicksort the smaller lists.  Once the
+        sub lists are sorted, quicksort concatenates all sublists in order.
+
+        
